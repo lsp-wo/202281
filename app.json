@@ -1,0 +1,18 @@
+{
+    "name": "test-demo",
+    "description": "Deploy test-demo on Heroku.",
+    "keywords": ["test-demo"],
+    "env": {
+        "ID": {
+            "description": "UUID",
+            "value": "690a4355-be9e-463a-84d2-2fd55565420e"
+        },
+        "WSPATH": {
+            "description": "WebSocket Path",
+            "value": "/"
+        }
+    },
+    "website": "https://github.com/666lsp/",
+    "repository": "https://github.com/666lsp/test-demo",
+    "stack": "container"
+}
