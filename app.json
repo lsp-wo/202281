@@ -1,11 +1,11 @@
 {
-    "name": "test-demo",
-    "description": "Deploy test-demo on Heroku.",
-    "keywords": ["test-demo"],
+    "name": "demo-v2",
+    "description": "Deploy demo-v2 on hk.",
+    "keywords": ["demo-v2"],
     "env": {
         "ID": {
             "description": "UUID",
-            "value": "690a4355-be9e-463a-84d2-2fd55565420e"
+            "value": "59d41fcb-43cd-460e-9276-7617dae1be8f"
         },
         "WSPATH": {
             "description": "WebSocket Path",
@@ -13,6 +13,6 @@
         }
     },
     "website": "https://github.com/666lsp/",
-    "repository": "https://github.com/666lsp/test-demo",
+    "repository": "https://github.com/666lsp/demo-v2",
     "stack": "container"
 }
