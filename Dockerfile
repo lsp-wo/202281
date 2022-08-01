@@ -1,8 +1,17 @@
-FROM alpine:latest
+FROM Alpine:3.15
 
-ADD entrypoint.sh /opt/entrypoint.sh
+RUN set -ex\
+    && apt update -y \
+    && apt upgrade -y \
+    && apt install -y wget unzip qrencode\
+    && apt install -y shadowsocks-libev\
+    && apt install -y nginx\
+    && apt autoremove -y
 
-RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
- && chmod +x /opt/entrypoint.sh
+COPY www.tar /wwwroot/www.tar
+COPY conf/ /conf
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["sh", "-c", "/opt/entrypoint.sh"]
+RUN chmod +x /entrypoint.sh
+
+CMD /entrypoint.sh
