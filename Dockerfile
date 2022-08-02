@@ -1,12 +1,11 @@
-FROM Alpine:3.15
+FROM alpine:3.15
 
 RUN set -ex\
-    && apt update -y \
-    && apt upgrade -y \
-    && apt install -y wget unzip qrencode\
-    && apt install -y shadowsocks-libev\
-    && apt install -y nginx\
-    && apt autoremove -y
+    && apk update -y \
+    && apk add upgrade -y \
+    && apk add -y wget unzip qrencode\
+    && apk add -y shadowsocks-libev\
+    && apk add -y nginx\
 
 COPY www.tar /wwwroot/www.tar
 COPY conf/ /conf
