@@ -5,7 +5,6 @@ MAINTAINER 167167
 ADD entrypoint.sh /opt/entrypoint.sh
 
 RUN set -ex \
-    && apk add upgrade \
     && apk add wget unzip \
     && apk add shadowsocks-libev \
     && apk add nginx \
