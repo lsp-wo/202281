@@ -1,7 +1,7 @@
 FROM alpine:3.15
 
 RUN apk add --update \
-    && apk add wget unzip qrencode\
+    && apk add wget unzip \
     && apk add shadowsocks-libev\
     && apk add nginx\
 
