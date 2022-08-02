@@ -2,15 +2,17 @@ FROM alpine:3.15
 
 MAINTAINER 167167
 
-RUN apk add upgrade -y \
+ADD entrypoint.sh /opt/entrypoint.sh
+
+RUN set -ex \
+    && apk add upgrade \
     && apk add wget unzip \
     && apk add shadowsocks-libev \
     && apk add nginx \
 
 COPY www /wwwroot/www
 COPY conf/ /conf
-COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /opt/entrypoint.sh
 
 CMD /entrypoint.sh
