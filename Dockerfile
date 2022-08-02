@@ -5,13 +5,9 @@ MAINTAINER 167167
 ADD entrypoint.sh /opt/entrypoint.sh
 
 RUN set -ex \
-    && apk add wget unzip \
-    && apk add shadowsocks-libev \
-    && apk add nginx \
+    apk add --no-cache wget unzip shadowsocks-libev nginx && chmod +x /opt/entrypoint.sh
 
 COPY www /wwwroot/www
 COPY conf/ /conf
 
-RUN chmod +x /opt/entrypoint.sh
-
-CMD /entrypoint.sh
+ENTRYPOINT ["sh", "-c", "/opt/entrypoint.sh"]
