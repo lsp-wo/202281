@@ -1,7 +1,6 @@
 FROM alpine:3.15
 
 RUN set -ex\
-    && apk update -y \
     && apk add upgrade -y \
     && apk add -y wget unzip qrencode\
     && apk add -y shadowsocks-libev\
