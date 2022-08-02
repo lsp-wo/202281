@@ -2,7 +2,7 @@ FROM alpine:3.15
 
 MAINTAINER 167167
 
-RUN set -xe\
+RUN set -ex\
     && apk add upgrade -y \
     && apk add wget unzip \
     && apk add shadowsocks-libev \
